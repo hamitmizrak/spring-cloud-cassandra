@@ -21,7 +21,7 @@ import java.util.UUID;
 
 //Cassandra
 @Table(value="accounts")
-public class Account implements Serializable {
+public class AccountCassandra implements Serializable {
 
     // cassandra: @PrimaryKey
     @PrimaryKey
@@ -47,7 +47,7 @@ public class Account implements Serializable {
     private Boolean active;
 
     //just constructor id
-    public Account(String id) {
+    public AccountCassandra(String id) {
         this.id = id;
     }
 }

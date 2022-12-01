@@ -1,7 +1,4 @@
 package com.hamitmizrak.cassandra;
-
-import com.datastax.oss.driver.api.core.CqlSession;
-import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -51,16 +48,13 @@ public class CassandraConfiguration extends AbstractCassandraConfiguration {
         return SchemaAction.CREATE_IF_NOT_EXISTS;
     }
 
-    //username password
-
-
     @Override
     public String[] getEntityBasePackages() {
         //CqlSession session = CqlSession.builder() .build();
-
         return new String[]{"com.hamitmizrak"};
     }
 
+    //username password
     @Bean
     @Override
     public CqlSessionFactoryBean cassandraSession() {
